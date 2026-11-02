@@ -6,8 +6,8 @@ function getYouTubeId(url: string): string {
 }
 
 function getInstagramId(url: string): string {
-  // Use url as the "id" for instagram
-  return url;
+  const match = url.match(/reel\/([^/?]+)/);
+  return match ? match[1] : url;
 }
 
 export const featuredProjects: Project[] = [
@@ -16,6 +16,7 @@ export const featuredProjects: Project[] = [
     title: 'Kawan Tanpa Perasaan',
     client: 'Bertrand Tio & Keny Lukman',
     category: 'Music Video',
+    productionHouse: 'euis.studio',
     source: 'youtube',
     url: 'https://youtu.be/wijL4WTADg0',
     videoId: getYouTubeId('https://youtu.be/wijL4WTADg0'),
@@ -28,6 +29,7 @@ export const featuredProjects: Project[] = [
     title: 'One More Time',
     client: 'Virtudance',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/Z_OS8XoqSlc',
     videoId: getYouTubeId('https://youtu.be/Z_OS8XoqSlc'),
@@ -40,9 +42,10 @@ export const featuredProjects: Project[] = [
     title: 'Cerita Dibalik Sunyi',
     client: 'Jiniso',
     category: 'Short Drama',
+    productionHouse: 'euis.studio',
     source: 'instagram',
     url: 'https://www.instagram.com/reel/DeIxHAoh7Z8/',
-    videoId: getInstagramId('https://www.instagram.com/reel/DeIxHAoh7Z8/'),
+    videoId: 'DeIxHAoh7Z8',
     featured: true,
     featuredSize: 'medium',
     role: 'Production Crew',
@@ -52,6 +55,7 @@ export const featuredProjects: Project[] = [
     title: 'Get Lost',
     client: 'ELthen Kosen',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/jTQKGrjf_L0',
     videoId: getYouTubeId('https://youtu.be/jTQKGrjf_L0'),
@@ -64,6 +68,7 @@ export const featuredProjects: Project[] = [
     title: "What's A Hero",
     client: 'Darumma Rollin',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/JbKf87vXnXQ',
     videoId: getYouTubeId('https://youtu.be/JbKf87vXnXQ'),
@@ -76,6 +81,7 @@ export const featuredProjects: Project[] = [
     title: 'Spotlight',
     client: 'Nevel',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/k-sA3MpaGQQ',
     videoId: getYouTubeId('https://youtu.be/k-sA3MpaGQQ'),
@@ -88,6 +94,7 @@ export const featuredProjects: Project[] = [
     title: 'Move Your Body',
     client: 'Pink Prisyl',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/oYeeasT9S4I',
     videoId: getYouTubeId('https://youtu.be/oYeeasT9S4I'),
@@ -100,6 +107,7 @@ export const featuredProjects: Project[] = [
     title: 'Trouble Makker Now',
     client: 'RX Team',
     category: 'Music Video',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/Yy-4Y8FTuM4',
     videoId: getYouTubeId('https://youtu.be/Yy-4Y8FTuM4'),
@@ -112,6 +120,7 @@ export const featuredProjects: Project[] = [
     title: 'Hootiee Frutty',
     client: 'Boys Bitches',
     category: 'Music Video Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/9sdQdwZhPos',
     videoId: getYouTubeId('https://youtu.be/9sdQdwZhPos'),
@@ -121,12 +130,61 @@ export const featuredProjects: Project[] = [
   },
 ];
 
-export const otherProjects: Project[] = [
+// Vina Fan Special Projects (EFKA.PROD)
+export const vinaFanProjects: Project[] = [
+  {
+    id: 'hai-mera-dil-tu-leja-vina-fan',
+    title: 'Hai Mera Dil Tu Leja',
+    client: 'Vina Fan',
+    category: 'Parodi',
+    productionHouse: 'EFKA.PROD',
+    source: 'youtube',
+    url: 'https://youtu.be/rKG6n5q_okI?si=1GdQ0W-TsLdEkX2V',
+    videoId: 'rKG6n5q_okI',
+    role: 'Production Crew',
+  },
+  {
+    id: 'husn-hai-suhana-vina-fan',
+    title: 'Husn Hai Suhana',
+    client: 'Vina Fan',
+    category: 'Parodi',
+    productionHouse: 'EFKA.PROD',
+    source: 'youtube',
+    url: 'https://youtu.be/TkWLNpsiSAA?si=ezjD6-sx8JJdxkwv',
+    videoId: 'TkWLNpsiSAA',
+    role: 'Production Crew',
+  },
+  {
+    id: 'gori-gori-vina-fan',
+    title: 'Gori Gori (Main Hoon Na)',
+    client: 'Vina Fan (feat. Thya Luvan)',
+    category: 'Parodi',
+    productionHouse: 'EFKA.PROD',
+    source: 'instagram',
+    url: 'https://www.instagram.com/reel/DbdVBGOyI5I/',
+    videoId: 'DbdVBGOyI5I',
+    role: 'Production Crew',
+  },
+  {
+    id: 'salaame-vina-fan',
+    title: 'Salaame (Dhoom 1)',
+    client: 'Vina Fan (feat. Thya Luvan)',
+    category: 'Parodi',
+    productionHouse: 'EFKA.PROD',
+    source: 'instagram',
+    url: 'https://www.instagram.com/reel/DbKrvJlyuIf/',
+    videoId: 'DbKrvJlyuIf',
+    role: 'Production Crew',
+  },
+];
+
+export const danceCoverProjects: Project[] = [
   {
     id: 'you-you-invasion',
     title: 'You You',
     client: 'Invasion',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/xsMKg1nrZcc',
     videoId: getYouTubeId('https://youtu.be/xsMKg1nrZcc'),
@@ -137,6 +195,7 @@ export const otherProjects: Project[] = [
     title: 'Showcase Vol. 5',
     client: 'Invasion',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/HuLAJDM8xU0',
     videoId: getYouTubeId('https://youtu.be/HuLAJDM8xU0'),
@@ -147,6 +206,7 @@ export const otherProjects: Project[] = [
     title: 'Fame',
     client: 'Invasion',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/U-tXmKjaDU4',
     videoId: getYouTubeId('https://youtu.be/U-tXmKjaDU4'),
@@ -157,6 +217,7 @@ export const otherProjects: Project[] = [
     title: 'Dance Cover Focus',
     client: 'Virtudance',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/JpCXpzG7hQ0',
     videoId: getYouTubeId('https://youtu.be/JpCXpzG7hQ0'),
@@ -167,6 +228,7 @@ export const otherProjects: Project[] = [
     title: 'XOXZ',
     client: 'Virtudance',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/WnYeYSzN3HE',
     videoId: getYouTubeId('https://youtu.be/WnYeYSzN3HE'),
@@ -177,6 +239,7 @@ export const otherProjects: Project[] = [
     title: 'Burning Up',
     client: 'The East',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/JDAKUL-trnY',
     videoId: getYouTubeId('https://youtu.be/JDAKUL-trnY'),
@@ -187,6 +250,7 @@ export const otherProjects: Project[] = [
     title: 'Burning Up',
     client: 'KSTAR',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/_XMcRiKLf4Q',
     videoId: getYouTubeId('https://youtu.be/_XMcRiKLf4Q'),
@@ -197,6 +261,7 @@ export const otherProjects: Project[] = [
     title: 'Hands Up + Burning Up',
     client: 'Code DC',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/Y6RuOf8lqJE',
     videoId: getYouTubeId('https://youtu.be/Y6RuOf8lqJE'),
@@ -207,6 +272,7 @@ export const otherProjects: Project[] = [
     title: 'Rude',
     client: 'Luminous Crew',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/q56tZmSumQ0',
     videoId: getYouTubeId('https://youtu.be/q56tZmSumQ0'),
@@ -217,6 +283,7 @@ export const otherProjects: Project[] = [
     title: 'Mamma Mia',
     client: 'Barbies Kingdom',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/ymCoVD8ovo8',
     videoId: getYouTubeId('https://youtu.be/ymCoVD8ovo8'),
@@ -227,6 +294,7 @@ export const otherProjects: Project[] = [
     title: 'Iconic By Mistake',
     client: 'Osowa',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/WO9jyArvX3o',
     videoId: getYouTubeId('https://youtu.be/WO9jyArvX3o'),
@@ -237,6 +305,7 @@ export const otherProjects: Project[] = [
     title: 'My Hero',
     client: 'Yum Tuk ID',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'youtube',
     url: 'https://youtu.be/k3fay87qR2c',
     videoId: getYouTubeId('https://youtu.be/k3fay87qR2c'),
@@ -247,6 +316,7 @@ export const otherProjects: Project[] = [
     title: 'Vaganza Kids',
     client: 'Dance Cover',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'instagram',
     url: 'https://www.instagram.com/reel/DdJSpVuS832/',
     videoId: 'DdJSpVuS832',
@@ -257,6 +327,7 @@ export const otherProjects: Project[] = [
     title: 'Timeless X 16 Shots',
     client: 'Dance Cover',
     category: 'Dance Cover',
+    productionHouse: 'EFKA.PROD',
     source: 'instagram',
     url: 'https://www.instagram.com/reel/De3dZKhA4sY/',
     videoId: 'De3dZKhA4sY',
@@ -264,4 +335,7 @@ export const otherProjects: Project[] = [
   },
 ];
 
-export const allProjects = [...featuredProjects, ...otherProjects];
+// Combine Vina Fan projects and dance covers in otherProjects
+export const otherProjects: Project[] = [...vinaFanProjects, ...danceCoverProjects];
+
+export const allProjects: Project[] = [...featuredProjects, ...otherProjects];

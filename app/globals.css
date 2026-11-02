@@ -1,28 +1,43 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
-
 :root {
   --color-bg: #F5F3EF;
   --color-bg-secondary: #E9E9E6;
+  --color-bg-card: #FFFFFF;
   --color-text: #242424;
   --color-text-muted: #777777;
   --color-accent: #8B6F5E;
   --color-accent-blue: #4A6FA5;
   --color-dark: #1A1A1A;
   --color-border: #D8D6D2;
-  --font-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --color-nav-bg: rgba(245, 243, 239, 0.92);
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --color-bg: #141413;
+  --color-bg-secondary: #1E1E1C;
+  --color-bg-card: #252522;
+  --color-text: #F0EDE8;
+  --color-text-muted: #A09D96;
+  --color-accent: #C48D75;
+  --color-accent-blue: #7B9FC9;
+  --color-dark: #0A0A09;
+  --color-border: #2F2F2A;
+  --color-nav-bg: rgba(20, 20, 19, 0.92);
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 body {
@@ -31,40 +46,96 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-::selection {
-  background-color: var(--color-accent);
-  color: white;
+/* Explicit font utilities ensuring fonts are always applied */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif !important;
 }
 
-/* Scrollbar */
+.font-mono {
+  font-family: 'JetBrains Mono', Consolas, monospace !important;
+}
+
+.font-sans {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
-  border-radius: 3px;
+  background: #A09D96;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
 }
 
-/* Focus styles */
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+/* Viewfinder crosshairs */
+.viewfinder-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
 }
 
-/* Reduced motion */
+.viewfinder-tl {
+  top: 10px;
+  left: 10px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.viewfinder-tr {
+  top: 10px;
+  right: 10px;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+.viewfinder-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.viewfinder-br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+/* REC Dot Pulse */
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+.animate-rec-dot {
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
