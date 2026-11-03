@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import InteractiveFavicon from '@/components/InteractiveFavicon';
+import CameraCursor from '@/components/CameraCursor';
 
 export const metadata: Metadata = {
-  title: 'Bagoes Hutomo — Production Crew Portfolio',
+  title: 'Bagoes Hutomo | Production Crew Portfolio',
   description:
-    'Personal portfolio of Bagoes Hutomo — Camera Assistant, Production Assistant, and Gaffer working behind the scenes in music videos, short dramas, and dance cover productions.',
+    'Portfolio of Bagoes Hutomo: camera assistant, production assistant, and gaffer for music videos, short dramas, and dance covers.',
   keywords: [
     'Bagoes Hutomo',
     'Camera Assistant',
@@ -18,10 +20,19 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Bagoes Hutomo' }],
   openGraph: {
-    title: 'Bagoes Hutomo — Production Crew Portfolio',
+    title: 'Bagoes Hutomo | Production Crew Portfolio',
     description:
-      'Behind every frame, there\'s a team. Explore the works of Bagoes Hutomo — camera assistant, production assistant, and gaffer.',
+      'Video production crew portfolio for Bagoes Hutomo: camera assistant, production assistant, and gaffer.',
     type: 'website',
+  },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 
@@ -64,6 +75,8 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased selection:bg-[#8B6F5E] selection:text-white">
+        <CameraCursor />
+        <InteractiveFavicon />
         {children}
       </body>
     </html>

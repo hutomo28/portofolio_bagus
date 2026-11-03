@@ -108,8 +108,7 @@ export default function OtherWorks() {
                 className="text-sm leading-relaxed text-[var(--color-text-muted)] mb-5"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
-                A collection of dance cover productions and creative projects, including Bollywood
-                parody recreations with <strong>Vina Fan</strong> and dynamic dance covers across various teams.
+                Dance covers, parody shoots with <strong>Vina Fan</strong>, and live performances. Search by title, artist, or production format below.
               </p>
 
               {/* Instant Search Bar */}

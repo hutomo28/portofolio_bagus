@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22201D" />
+      <stop offset="50%" stop-color="#171615" />
+      <stop offset="100%" stop-color="#0E0D0C" />
+    </linearGradient>
+
+    <!-- Bronze Accent Rim Gradient -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5BFA8" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#C48D75" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#8B5B43" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Letter B Luxurious Metallic Gradient -->
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF0E6" />
+      <stop offset="30%" stop-color="#E2B7A0" />
+      <stop offset="65%" stop-color="#C48D75" />
+      <stop offset="100%" stop-color="#9C6246" />
+    </linearGradient>
+
+    <!-- Soft Ambient Drop Shadow -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Canvas -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="url(#rimGrad)" stroke-width="6" />
+
+  <!-- Inner subtle border for depth -->
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="none" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="2" />
+
+  <!-- Letter B Vector Monogram -->
+  <path
+    d="M 118.6 88.8 C 126.3 89.1, 136.2 89.4, 148.6 89.7 C 160.9 90.0, 173.2 90.1, 185.5 90.1 C 199.6 90.1, 213.2 90.0, 226.4 89.7 C 239.6 89.4, 249.0 89.3, 254.6 89.3 C 291.0 89.3, 318.2 95.7, 336.2 108.6 C 354.3 121.5, 363.3 138.1, 363.3 158.3 C 363.3 168.6, 360.2 179.0, 354.0 189.6 C 347.9 200.1, 338.3 209.5, 325.4 217.7 C 312.5 225.9, 295.8 232.0, 275.3 235.8 L 275.3 236.7 C 302.8 238.7, 324.7 243.7, 340.8 251.6 C 357.0 259.5, 368.6 269.1, 375.6 280.2 C 382.6 291.4, 386.2 302.9, 386.2 315.0 C 386.2 333.5, 381.3 349.0, 371.6 361.6 C 362.0 374.2, 348.0 383.8, 329.8 390.4 C 311.6 397.0, 289.9 400.3, 264.7 400.3 C 257.7 400.3, 247.6 400.1, 234.4 399.7 C 221.2 399.2, 205.2 399.0, 186.4 399.0 C 173.5 399.0, 160.9 399.1, 148.6 399.2 C 136.2 399.4, 126.3 399.7, 118.6 400.3 L 118.6 391.5 C 128.0 390.9, 135.1 389.8, 139.8 388.0 C 144.4 386.3, 147.6 382.7, 149.2 377.5 C 150.8 372.2, 151.6 364.3, 151.6 353.7 L 151.6 135.5 C 151.6 124.6, 150.8 116.6, 149.2 111.5 C 147.6 106.3, 144.4 102.8, 139.5 100.9 C 134.7 99.0, 127.7 97.9, 118.6 97.6 Z M 248.9 97.6 C 237.4 97.6, 230.0 100.1, 226.7 105.1 C 223.3 110.1, 221.6 120.2, 221.6 135.5 L 221.6 353.7 C 221.6 364.0, 222.4 371.7, 224.0 377.0 C 225.6 382.3, 228.6 385.8, 232.8 387.6 C 237.1 389.3, 243.4 390.2, 252.0 390.2 C 273.1 390.2, 288.5 383.5, 298.4 370.2 C 308.2 356.8, 313.1 337.9, 313.1 313.2 C 313.1 290.6, 307.5 273.2, 296.2 260.9 C 284.9 248.5, 266.2 242.4, 240.1 242.4 L 202.7 242.4 C 202.7 242.4, 202.7 241.1, 202.7 238.6 C 202.7 236.1, 202.7 234.9, 202.7 234.9 L 240.5 234.9 C 254.3 234.9, 264.9 231.6, 272.2 225.0 C 279.5 218.4, 284.7 209.6, 287.6 198.6 C 290.5 187.6, 292.0 175.8, 292.0 163.2 C 292.0 141.5, 288.6 125.1, 281.9 114.1 C 275.1 103.1, 264.1 97.6, 248.9 97.6 Z"
+    fill="url(#letterGrad)"
+    fill-rule="evenodd"
+    filter="url(#dropShadow)"
+  />
+</svg>

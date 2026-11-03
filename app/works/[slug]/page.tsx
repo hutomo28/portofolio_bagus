@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: 'Project Not Found' };
 
   return {
-    title: `${project.title} (${project.productionHouse}) — Bagoes Hutomo`,
+    title: `${project.title} (${project.productionHouse}) | Bagoes Hutomo`,
     description: `${project.title} (${project.category} · ${project.productionHouse}) for ${project.client}. Crew support by Bagoes Hutomo.`,
   };
 }
@@ -185,7 +185,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.category !== 'Parodi' ? `${project.category} · ` : ''}{project.productionHouse}
               </p>
               <p className="text-sm text-[var(--color-text-muted)] max-w-md mb-6">
-                This project was published as an Instagram Reel. Click below to view the original video on Instagram.
+                Published on Instagram Reel in 9:16 vertical format. Open the original post below.
               </p>
               <a
                 href={project.url}

@@ -30,7 +30,7 @@ const roles = [
     title: 'Camera Assistant',
     badge: 'CAMERA DEPT',
     description:
-      'Supporting camera operations during production, assisting the director of photography and camera team with equipment setup, lens changes, monitor feeds, and on-set coordination.',
+      'Prep camera packages, pull cables, swap lenses between takes, and feed wireless monitors for the DP and director.',
     skills: ['Rigging & Mounting', 'Lens Swaps', 'Wireless Video Feed', 'Slate Coordination'],
   },
   {
@@ -38,7 +38,7 @@ const roles = [
     title: 'Production Assistant',
     badge: 'PRODUCTION DEPT',
     description:
-      'Supporting the production team with logistics, schedule tracking, talent coordination, and on-set activities to ensure smooth workflow throughout the shoot.',
+      'Distribute call sheets, stage gear across locations, guide talent to set, and protect the daily shooting schedule.',
     skills: ['Call Sheets', 'On-Set Logistics', 'Talent Flow', 'Equipment Movement'],
   },
   {
@@ -46,7 +46,7 @@ const roles = [
     title: 'Gaffer / Lighting Crew',
     badge: 'LIGHTING DEPT',
     description:
-      'Assisting with lighting setups and electrical equipment on set, positioning diffusion, C-stands, and key fixtures to help create the right visual atmosphere for every project.',
+      'Rig fixtures, position C-stands and diffusers, route distribution boxes safely, and trim lighting for each camera setup.',
     skills: ['Fixture Rigging', 'Diffusion & Modifiers', 'Cable Management', 'Lighting Control'],
   },
 ];
@@ -105,7 +105,7 @@ export default function About() {
                   fontWeight: 500,
                 }}
               >
-                Hello, I'm <strong style={{ color: 'var(--color-accent)' }}>Bagoes Hutomo</strong>.
+                I am <strong style={{ color: 'var(--color-accent)' }}>Bagoes Hutomo</strong>, a video production crew member based in Indonesia.
               </p>
               <p
                 style={{
@@ -115,8 +115,7 @@ export default function About() {
                   color: 'var(--color-text-muted)',
                 }}
               >
-                I have experience working as part of video production crews across different types
-                of projects, including music videos, dance covers, and short dramas.
+                I work across music videos, narrative shorts, and dance covers, taking roles in camera support, lighting, and floor logistics.
               </p>
               <p
                 style={{
@@ -126,19 +125,7 @@ export default function About() {
                   color: 'var(--color-text-muted)',
                 }}
               >
-                My involvement includes assisting camera operations, supporting production
-                activities, and helping with lighting setups.
-              </p>
-              <p
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '15px',
-                  lineHeight: 1.85,
-                  color: 'var(--color-text-muted)',
-                }}
-              >
-                I enjoy being part of a creative team and contributing to the production process
-                behind every visual project.
+                Sets move fast. I focus on clean resets: swapping glass before the next call, rigging fixtures where the DP needs them, and keeping cables tidy so crew move freely.
               </p>
             </div>
 
@@ -151,7 +138,7 @@ export default function About() {
             >
               <div className="flex items-center gap-2 mb-2 text-xs font-mono tracking-wider uppercase text-[var(--color-accent)]">
                 <ShieldCheck size={16} />
-                <span>TEAM INTEGRITY</span>
+                <span>ON-SET PRINCIPLE</span>
               </div>
               <p
                 style={{
@@ -162,8 +149,7 @@ export default function About() {
                   lineHeight: 1.6,
                 }}
               >
-                "Every great visual story is built by a team working in harmony — I take pride in
-                being a reliable, attentive contributor behind the scenes."
+                "Production days succeed when crew anticipate the next setup before call. Clear communication, quick turnarounds, zero clutter."
               </p>
             </div>
           </div>

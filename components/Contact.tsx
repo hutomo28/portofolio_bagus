@@ -104,8 +104,8 @@ export default function Contact() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              Interested in working together or have a project in mind? Feel free to reach out.
-              Available for camera assistance, on-set production support, and lighting crew callouts.
+              Have a shoot coming up or need crew for a date? Reach out by message or email.
+              Available for camera assistance, lighting setups, and production coordination.
             </p>
 
             {/* Quick Details Badges */}

@@ -61,8 +61,12 @@ export default function Navbar() {
               onClick={() => handleNavClick('#home')}
               className="group flex items-center gap-3 text-left cursor-pointer"
             >
-              <div className="w-8 h-8 rounded border border-[var(--color-border)] flex items-center justify-center font-mono text-xs font-bold text-[var(--color-accent)] bg-[var(--color-bg-secondary)] group-hover:border-[var(--color-accent)] transition-colors">
-                BH
+              <div className="relative w-8 h-8 rounded-lg border border-[var(--color-border)] flex items-center justify-center overflow-hidden bg-[var(--color-bg-secondary)] group-hover:border-[var(--color-accent)] group-hover:scale-105 active:scale-95 group-hover:shadow-[0_0_14px_rgba(196,141,117,0.35)] transition-all duration-300">
+                <span className="font-mono text-xs font-bold text-[var(--color-accent)] transition-transform duration-300 group-hover:scale-110">
+                  BH
+                </span>
+                {/* Interactive sheen on hover */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
               </div>
               <div className="flex flex-col leading-tight">
                 <span

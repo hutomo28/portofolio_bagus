@@ -99,8 +99,7 @@ export default function FeaturedWorks() {
                 className="text-sm leading-relaxed text-[var(--color-text-muted)]"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
-                Priority music videos and narrative short dramas. Each project highlights
-                behind-the-scenes camera operations, production coordination, and lighting crew support.
+                Music videos and narrative short dramas. These selections cover on-set assignments across camera prep, lighting rigs, and floor logistics.
               </p>
 
               {/* Category Filter Pills */}

@@ -141,3 +141,18 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Custom Camera Cursor (Desktop only) */
+@media (pointer: fine) {
+  html.has-camera-cursor,
+  html.has-camera-cursor body,
+  html.has-camera-cursor a,
+  html.has-camera-cursor button,
+  html.has-camera-cursor input,
+  html.has-camera-cursor textarea,
+  html.has-camera-cursor select,
+  html.has-camera-cursor [role="button"],
+  html.has-camera-cursor .cursor-pointer {
+    cursor: none !important;
+  }
+}

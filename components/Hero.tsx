@@ -155,7 +155,7 @@ export default function Hero() {
                 transitionDelay: '400ms',
               }}
             >
-              "Behind Every Frame, There's a Team."
+              Camera, lighting, and production coordination on set.
             </p>
 
             {/* Description */}
@@ -165,9 +165,8 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '500ms' }}
             >
-              An individual working behind the scenes in video production, supporting camera
-              operations, production activities, and lighting setups across music videos, short
-              dramas, and creative productions.
+              I handle camera prep, run power and lighting rigs, and keep shoot schedules moving.
+              Recent work spans music videos, narrative shorts, and dance covers.
             </p>
 
             {/* Animated Role Pills */}
