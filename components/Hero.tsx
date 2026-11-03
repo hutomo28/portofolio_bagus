@@ -91,7 +91,7 @@ export default function Hero() {
             <span className="hidden sm:inline text-[var(--color-border)]">|</span>
             <span className="hidden sm:inline">24 FPS</span>
             <span className="hidden sm:inline">·</span>
-            <span className="hidden sm:inline">180° SHUTTER</span>
+            <span className="hidden sm:inline">1/200 SHUTTER SPEED</span>
           </div>
 
           <div className="flex items-center gap-3">
