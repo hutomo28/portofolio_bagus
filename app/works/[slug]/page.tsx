@@ -10,6 +10,14 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'https://bagoeshutomo.com');
+
 export async function generateStaticParams() {
   return allProjects.map((project) => ({
     slug: project.id,
@@ -21,9 +29,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = allProjects.find((p) => p.id === slug);
   if (!project) return { title: 'Project Not Found' };
 
+  const url = `${baseUrl}/works/${project.id}`;
+  const rolesText = project.role || 'Camera Assistant, Production Assistant & Gaffer';
+  const thumbnailUrl =
+    project.source === 'youtube'
+      ? `https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`
+      : `${baseUrl}/opengraph-image`;
+
   return {
-    title: `${project.title} (${project.productionHouse}) | Bagoes Hutomo`,
-    description: `${project.title} (${project.category} · ${project.productionHouse}) for ${project.client}. Crew support by Bagoes Hutomo.`,
+    title: `${project.title} — ${project.productionHouse}`,
+    description: `${project.title} (${project.category} · ${project.productionHouse}) for ${project.client}. Crew: ${rolesText}. Portfolio of Bagoes Hutomo.`,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${project.title} | Bagoes Hutomo`,
+      description: `${project.title} (${project.category} · ${project.productionHouse}) — Crew: ${rolesText}.`,
+      url,
+      type: 'video.other',
+      images: [
+        {
+          url: thumbnailUrl,
+          width: 1280,
+          height: 720,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | Bagoes Hutomo`,
+      description: `${project.title} (${project.category} · ${project.productionHouse}) for ${project.client}. Crew: ${rolesText}.`,
+      images: [thumbnailUrl],
+    },
   };
 }
 
@@ -46,9 +84,43 @@ export default async function ProjectDetailPage({ params }: Props) {
     allProjects[(currentIndex - 1 + allProjects.length) % allProjects.length];
 
   const isEuis = project.productionHouse === 'EUIS.STUDIO';
+  const rolesText = project.role || 'Camera Assistant, Production Assistant & Gaffer';
+  const thumbnailUrl = isYouTube
+    ? `https://img.youtube.com/vi/${project.videoId}/hqdefault.jpg`
+    : `${baseUrl}/opengraph-image`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': isYouTube ? 'VideoObject' : 'CreativeWork',
+    name: project.title,
+    description: `${project.title} (${project.category} · ${project.productionHouse}) for ${project.client}. Crew support by Bagoes Hutomo (${rolesText}).`,
+    thumbnailUrl: [thumbnailUrl],
+    uploadDate: '2024-01-01',
+    creator: {
+      '@type': 'Person',
+      name: 'Bagoes Hutomo',
+      alternateName: 'Bagus Hutomo',
+      url: baseUrl,
+    },
+    productionCompany: {
+      '@type': 'Organization',
+      name: project.productionHouse,
+      url: isEuis ? 'https://www.instagram.com/euisstudio/' : 'https://www.instagram.com/efka.pro/',
+    },
+    ...(isYouTube && project.videoId
+      ? {
+          embedUrl: `https://www.youtube.com/embed/${project.videoId}`,
+          contentUrl: `https://www.youtube.com/watch?v=${project.videoId}`,
+        }
+      : {}),
+  };
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Top Bar */}
       <header className="border-b border-[var(--color-border)] sticky top-0 bg-[var(--color-nav-bg)] backdrop-blur-md z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between">
