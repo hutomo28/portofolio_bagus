@@ -40,7 +40,7 @@ export default function ProjectCard({ project, size = 'grid', index = 0 }: Proje
     }
   };
 
-  const isEuis = project.productionHouse === 'euis.studio';
+  const isEuis = project.productionHouse === 'EUIS.STUDIO';
 
   const aspectRatioClass =
     size === 'large'

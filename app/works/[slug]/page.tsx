@@ -44,7 +44,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const prevProject =
     allProjects[(currentIndex - 1 + allProjects.length) % allProjects.length];
 
-  const isEuis = project.productionHouse === 'euis.studio';
+  const isEuis = project.productionHouse === 'EUIS.STUDIO';
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)', color: 'var(--color-text)' }}>

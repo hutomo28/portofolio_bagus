@@ -8,7 +8,7 @@ export type ProjectCategory =
 
 export type ProjectSource = 'youtube' | 'instagram';
 
-export type ProductionHouse = 'euis.studio' | 'EFKA.PROD';
+export type ProductionHouse = 'EUIS.STUDIO' | 'EFKA.PROD';
 
 export interface Project {
   id: string;
