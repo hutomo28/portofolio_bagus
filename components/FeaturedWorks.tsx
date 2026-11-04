@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { featuredProjects } from '@/data/projects';
+import { featuredProjects, danceCoverProjects } from '@/data/projects';
 import { Film, Filter } from 'lucide-react';
 
 function useInView(threshold = 0.05) {
@@ -34,11 +34,18 @@ export default function FeaturedWorks() {
     { id: 'all', label: 'All Featured' },
     { id: 'Music Video', label: 'Music Videos' },
     { id: 'Short Drama', label: 'Short Drama' },
+    { id: 'Dance Cover', label: 'Dance Cover' },
   ];
 
   const filteredProjects =
     activeCategory === 'all'
       ? featuredProjects
+      : activeCategory === 'Dance Cover'
+      ? danceCoverProjects
+      : activeCategory === 'Music Video'
+      ? featuredProjects.filter(
+          (p) => p.category === 'Music Video' || p.category === 'Music Video Cover'
+        )
       : featuredProjects.filter((p) => p.category === activeCategory);
 
   // When 'all', retain the requested editorial layout: top 2 hero, next 2 medium, rest small
@@ -67,7 +74,9 @@ export default function FeaturedWorks() {
             </div>
 
             <span className="font-mono text-xs text-[var(--color-text-muted)]">
-              09 FEATURED WORKS
+              {activeCategory === 'all'
+                ? '09 FEATURED WORKS'
+                : `${filteredProjects.length < 10 ? '0' + filteredProjects.length : filteredProjects.length} PRODUCTIONS`}
             </span>
           </div>
 
@@ -99,7 +108,7 @@ export default function FeaturedWorks() {
                 className="text-sm leading-relaxed text-[var(--color-text-muted)]"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
-                Music videos and narrative short dramas. These selections cover on-set assignments across camera prep, lighting rigs, and floor logistics.
+                Music videos, narrative short dramas, and dance covers. These selections cover on-set assignments across camera prep, lighting rigs, and floor logistics.
               </p>
 
               {/* Category Filter Pills */}
