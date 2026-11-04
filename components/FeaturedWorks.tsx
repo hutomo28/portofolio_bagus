@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { featuredProjects, danceCoverProjects } from '@/data/projects';
+import { featuredProjects, danceCoverProjects, vinaFanProjects } from '@/data/projects';
 import { Film, Filter } from 'lucide-react';
 
 function useInView(threshold = 0.05) {
@@ -35,6 +35,7 @@ export default function FeaturedWorks() {
     { id: 'Music Video', label: 'Music Videos' },
     { id: 'Short Drama', label: 'Short Drama' },
     { id: 'Dance Cover', label: 'Dance Cover' },
+    { id: 'Parodi', label: 'Parodi' },
   ];
 
   const filteredProjects =
@@ -42,6 +43,8 @@ export default function FeaturedWorks() {
       ? featuredProjects
       : activeCategory === 'Dance Cover'
       ? danceCoverProjects
+      : activeCategory === 'Parodi'
+      ? vinaFanProjects
       : activeCategory === 'Music Video'
       ? featuredProjects.filter(
           (p) => p.category === 'Music Video' || p.category === 'Music Video Cover'
@@ -108,7 +111,7 @@ export default function FeaturedWorks() {
                 className="text-sm leading-relaxed text-[var(--color-text-muted)]"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
-                Music videos, narrative short dramas, and dance covers. These selections cover on-set assignments across camera prep, lighting rigs, and floor logistics.
+                Music videos, narrative short dramas, dance covers, and parody productions. These selections cover on-set assignments across camera prep, lighting rigs, and floor logistics.
               </p>
 
               {/* Category Filter Pills */}
