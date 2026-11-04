@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Film, User, Tag, Play, Building2 } from 'lucide-react';
 import { allProjects } from '@/data/projects';
+import { PRODUCTION_HOUSE_LINKS } from '@/types/project';
 import ThemeToggle from '@/components/ThemeToggle';
 import type { Metadata } from 'next';
 
@@ -99,13 +100,18 @@ export default async function ProjectDetailPage({ params }: Props) {
               </>
             )}
             <span>·</span>
-            <span
-              className={`font-semibold ${
+            <a
+              href={PRODUCTION_HOUSE_LINKS[project.productionHouse]}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit ${project.productionHouse} on Instagram`}
+              className={`font-semibold hover:underline inline-flex items-center gap-1 ${
                 isEuis ? 'text-[var(--color-accent)]' : 'text-[var(--color-accent-blue)]'
               }`}
             >
-              {project.productionHouse}
-            </span>
+              <span>{project.productionHouse}</span>
+              <ExternalLink size={10} className="opacity-70" />
+            </a>
           </div>
 
           <div className="flex items-center gap-2 text-[11px]">
@@ -124,13 +130,18 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <span className="text-[var(--color-border)]">·</span>
               </>
             )}
-            <span
-              className={`font-semibold ${
+            <a
+              href={PRODUCTION_HOUSE_LINKS[project.productionHouse]}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit ${project.productionHouse} on Instagram`}
+              className={`font-semibold hover:underline inline-flex items-center gap-1 ${
                 isEuis ? 'text-[var(--color-accent)]' : 'text-[var(--color-accent-blue)]'
               }`}
             >
-              {project.productionHouse}
-            </span>
+              <span>{project.productionHouse}</span>
+              <ExternalLink size={10} className="opacity-70" />
+            </a>
           </div>
 
           <h1
@@ -182,7 +193,16 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.title}
               </p>
               <p className="text-xs font-mono text-[var(--color-text-muted)] mb-2">
-                {project.category !== 'Parodi' ? `${project.category} · ` : ''}{project.productionHouse}
+                {project.category !== 'Parodi' ? `${project.category} · ` : ''}
+                <a
+                  href={PRODUCTION_HOUSE_LINKS[project.productionHouse]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-[var(--color-text)] font-semibold inline-flex items-center gap-1"
+                >
+                  <span>{project.productionHouse}</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
               </p>
               <p className="text-sm text-[var(--color-text-muted)] max-w-md mb-6">
                 Published on Instagram Reel in 9:16 vertical format. Open the original post below.
@@ -225,16 +245,28 @@ export default async function ProjectDetailPage({ params }: Props) {
               <Building2 size={14} className="text-[var(--color-accent)]" />
               <span>Production House</span>
             </div>
-            <p
-              className={`text-base font-bold ${
+            <a
+              href={PRODUCTION_HOUSE_LINKS[project.productionHouse]}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Visit ${project.productionHouse} Instagram`}
+              className={`text-base font-bold hover:underline inline-flex items-center gap-1.5 group ${
                 isEuis ? 'text-[var(--color-accent)]' : 'text-[var(--color-accent-blue)]'
               }`}
               style={{ fontFamily: 'var(--font-sans)' }}
             >
-              {project.productionHouse}
-            </p>
+              <span>{project.productionHouse}</span>
+              <ExternalLink size={13} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+            </a>
             <p className="text-xs text-[var(--color-text-muted)] mt-1 font-mono">
-              Production Studio
+              <a
+                href={PRODUCTION_HOUSE_LINKS[project.productionHouse]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-[11px] text-[#E1306C]"
+              >
+                Instagram Profile ↗
+              </a>
             </p>
           </div>
 

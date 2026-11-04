@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink, Play, Film } from 'lucide-react';
-import { Project } from '@/types/project';
+import { Project, PRODUCTION_HOUSE_LINKS } from '@/types/project';
 
 interface ProjectCardProps {
   project: Project;
@@ -41,6 +41,12 @@ export default function ProjectCard({ project, size = 'grid', index = 0 }: Proje
   };
 
   const isEuis = project.productionHouse === 'EUIS.STUDIO';
+
+  const handlePhClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(PRODUCTION_HOUSE_LINKS[project.productionHouse], '_blank', 'noopener,noreferrer');
+  };
 
   const aspectRatioClass =
     size === 'large'
@@ -121,13 +127,16 @@ export default function ProjectCard({ project, size = 'grid', index = 0 }: Proje
               {project.category}
             </span>
           )}
-          <span
-            className={`text-[9px] font-mono tracking-wider px-2 py-1 backdrop-blur-md text-white font-medium ${
-              isEuis ? 'bg-[#8B6F5E]/90' : 'bg-[#242424]/90'
+          <button
+            type="button"
+            onClick={handlePhClick}
+            title={`Visit ${project.productionHouse} on Instagram`}
+            className={`text-[9px] font-mono tracking-wider px-2 py-1 backdrop-blur-md text-white font-medium cursor-pointer transition-transform hover:scale-105 active:scale-95 ${
+              isEuis ? 'bg-[#8B6F5E]/90 hover:bg-[#8B6F5E]' : 'bg-[#242424]/90 hover:bg-black'
             }`}
           >
-            {project.productionHouse}
-          </span>
+            {project.productionHouse} ↗
+          </button>
         </div>
 
         {/* Source indicator Top-Right */}
@@ -177,13 +186,17 @@ export default function ProjectCard({ project, size = 'grid', index = 0 }: Proje
                 <span className="text-[var(--color-border)]">·</span>
               </>
             )}
-            <span
-              className={`font-semibold ${
+            <button
+              type="button"
+              onClick={handlePhClick}
+              title={`Visit ${project.productionHouse} on Instagram`}
+              className={`font-semibold cursor-pointer hover:underline inline-flex items-center gap-0.5 ${
                 isEuis ? 'text-[var(--color-accent)]' : 'text-[var(--color-accent-blue)]'
               }`}
             >
-              {project.productionHouse}
-            </span>
+              <span>{project.productionHouse}</span>
+              <span className="text-[9px] opacity-70">↗</span>
+            </button>
           </p>
         </div>
 

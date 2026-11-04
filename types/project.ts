@@ -10,6 +10,11 @@ export type ProjectSource = 'youtube' | 'instagram';
 
 export type ProductionHouse = 'EUIS.STUDIO' | 'EFKA.PROD';
 
+export const PRODUCTION_HOUSE_LINKS: Record<ProductionHouse, string> = {
+  'EUIS.STUDIO': 'https://www.instagram.com/euisstudio/',
+  'EFKA.PROD': 'https://www.instagram.com/efka.pro/',
+};
+
 export interface Project {
   id: string;
   title: string;
