@@ -333,6 +333,17 @@ export const danceCoverProjects: Project[] = [
     videoId: 'De3dZKhA4sY',
     role: 'Production Crew',
   },
+  {
+    id: 'Tamaradai-promosi-skincare',
+    title: 'Tamaradai Promosi Skincare',
+    client: 'Tamara Dai',
+    category: 'Promotion',
+    productionHouse: 'EUIS.STUDIO',
+    source: 'instagram',
+    url: 'https://www.instagram.com/reel/Dc0NEj1huxu/?utm_source=ig_web_copy_link&obrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==',
+    videoId: 'Dc0NEj1huxu',
+    role: 'Production Crew',
+  },
 ];
 
 // Combine Vina Fan projects and dance covers in otherProjects
