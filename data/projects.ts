@@ -325,7 +325,7 @@ export const danceCoverProjects: Project[] = [
   {
     id: 'timeless-16-shots-dance-cover',
     title: 'Timeless X 16 Shots',
-    client: 'Dance Cover',
+    client: 'Audi',
     category: 'Dance Cover',
     productionHouse: 'EFKA.PROD',
     source: 'instagram',
