@@ -4,7 +4,9 @@ export type ProjectCategory =
   | 'Music Video Cover'
   | 'Dance Cover'
   | 'Dance Cover / Concert'
-  | 'Parodi';
+  | 'Parodi'
+  | 'Promotion'
+  | 'Promosi';
 
 export type ProjectSource = 'youtube' | 'instagram';
 

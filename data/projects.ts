@@ -333,6 +333,9 @@ export const danceCoverProjects: Project[] = [
     videoId: 'De3dZKhA4sY',
     role: 'Production Crew',
   },
+];
+
+export const promotionProjects: Project[] = [
   {
     id: 'Tamaradai-promosi-skincare',
     title: 'Tamaradai Promosi Skincare',
@@ -346,7 +349,11 @@ export const danceCoverProjects: Project[] = [
   },
 ];
 
-// Combine Vina Fan projects and dance covers in otherProjects
-export const otherProjects: Project[] = [...vinaFanProjects, ...danceCoverProjects];
+// Combine Vina Fan projects, dance covers, and promotions in otherProjects
+export const otherProjects: Project[] = [
+  ...vinaFanProjects,
+  ...danceCoverProjects,
+  ...promotionProjects,
+];
 
 export const allProjects: Project[] = [...featuredProjects, ...otherProjects];

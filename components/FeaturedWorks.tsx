@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { featuredProjects, danceCoverProjects, vinaFanProjects } from '@/data/projects';
+import { featuredProjects, danceCoverProjects, vinaFanProjects, promotionProjects } from '@/data/projects';
 import { Film, Filter } from 'lucide-react';
 
 function useInView(threshold = 0.05) {
@@ -36,6 +36,7 @@ export default function FeaturedWorks() {
     { id: 'Short Drama', label: 'Short Drama' },
     { id: 'Dance Cover', label: 'Dance Cover' },
     { id: 'Parodi', label: 'Parodi' },
+    { id: 'Promotion', label: 'Promosi' },
   ];
 
   const filteredProjects =
@@ -45,6 +46,8 @@ export default function FeaturedWorks() {
       ? danceCoverProjects
       : activeCategory === 'Parodi'
       ? vinaFanProjects
+      : activeCategory === 'Promotion'
+      ? promotionProjects
       : activeCategory === 'Music Video'
       ? featuredProjects.filter(
           (p) => p.category === 'Music Video' || p.category === 'Music Video Cover'
