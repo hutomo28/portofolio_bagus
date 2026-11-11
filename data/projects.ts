@@ -338,7 +338,7 @@ export const danceCoverProjects: Project[] = [
 export const promotionProjects: Project[] = [
   {
     id: 'Tamaradai-promosi-skincare',
-    title: 'Tamaradai Promosi Skincare',
+    title: 'Promotion Potenza',
     client: 'Tamara Dai',
     category: 'Promotion',
     productionHouse: 'EUIS.STUDIO',
