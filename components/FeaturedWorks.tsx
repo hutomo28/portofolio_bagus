@@ -81,7 +81,7 @@ export default function FeaturedWorks() {
 
             <span className="font-mono text-xs text-[var(--color-text-muted)]">
               {activeCategory === 'all'
-                ? '09 FEATURED WORKS'
+                ? `${featuredProjects.length < 10 ? '0' + featuredProjects.length : featuredProjects.length} FEATURED WORKS`
                 : `${filteredProjects.length < 10 ? '0' + filteredProjects.length : filteredProjects.length} PRODUCTIONS`}
             </span>
           </div>
@@ -204,7 +204,9 @@ export default function FeaturedWorks() {
                 <span className="font-mono text-xs tracking-widest uppercase text-[var(--color-text-muted)]">
                   ADDITIONAL FEATURED PRODUCTIONS
                 </span>
-                <span className="font-mono text-xs text-[var(--color-text-muted)]">05 WORKS</span>
+                <span className="font-mono text-xs text-[var(--color-text-muted)]">
+                  {restProjects.length < 10 ? `0${restProjects.length}` : restProjects.length} WORKS
+                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">

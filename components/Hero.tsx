@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowDown, Camera, Film, Zap, Clapperboard, Crosshair } from 'lucide-react';
+import { allProjects } from '@/data/projects';
 
 const roles = [
   { label: 'Camera Assistant', icon: Camera, desc: 'Focus pull & camera rig support' },
@@ -283,7 +284,7 @@ export default function Hero() {
                 </div>
 
                 <div className="pt-3 flex items-center justify-between text-[10px] text-[var(--color-text-muted)]">
-                  <span>31+ WORKS CATALOGUED</span>
+                  <span>{allProjects.length < 10 ? `0${allProjects.length}` : allProjects.length} WORKS CATALOGUED</span>
                   <span className="text-emerald-500 font-semibold">● ACTIVE</span>
                 </div>
               </div>

@@ -178,7 +178,11 @@ export default function OtherWorks() {
           style={{ transitionDelay: '350ms' }}
         >
           {[
-            { number: '31+', label: 'Total Productions Supported', sub: 'Music videos, dramas, Vina Fan & dance covers' },
+            {
+              number: allProjects.length < 10 ? `0${allProjects.length}` : `${allProjects.length}`,
+              label: 'Total Productions Supported',
+              sub: 'Music videos, dramas, Vina Fan & dance covers',
+            },
             { number: '03', label: 'Crew Specialties', sub: 'Camera Assistant, PA & Gaffer' },
             { number: '09+', label: 'Collaborative Teams', sub: 'Vina Fan, Invasion, Virtudance, Jiniso, etc.' },
             { number: '100%', label: 'Crew Dedication', sub: 'Committed to on-set excellence' },
