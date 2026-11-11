@@ -313,7 +313,7 @@ export const danceCoverProjects: Project[] = [
   },
   {
     id: 'vaganza-kids-dance-cover',
-    title: 'WE GO UP',
+    title: 'WE GO UP X CHOOM',
     client: 'Vaganza Kids',
     category: 'Dance Cover',
     productionHouse: 'EFKA.PROD',
